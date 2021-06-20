@@ -1,0 +1,448 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+<title>Nyx's Resume</title>
+<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	#menu_control{
+		position: absolute;
+		z-index: -2;
+		opacity: 0;
+	}
+	#fixed-header-slide {
+             width: 100%;
+             height: 50px; 
+             position: fixed;
+             top: 0px;
+             z-index: 2;
+    }
+        #fixed-header-wrap {
+             width: 100%;
+             height: 50px;
+             position: absolute;
+             bottom: 0px;
+    }
+	.header{
+		height: 50px;
+		background-color: #B0B0B0;
+		position: relative;
+		z-index: 1;
+	}
+	.logo{
+		height: 40px;
+		width: 60px;
+	}
+	.logo img{
+		vertical-align:middle;
+		margin: 0 10px;
+	}
+	.menu_btn{
+		width: 40px;
+		height: 40px;
+		background-color: #FFF;
+		display: block;
+		position: absolute;
+		top: 5px;
+		right: 10px;
+	}
+	.menu_btn span{
+		opacity: 0;
+		width: 1px;
+		height: 1px;
+		display: block;
+		overflow: hidden;
+	}
+	.menu_btn::before{
+		content: "";
+		position: absolute;
+		height: 2px;
+		left: 2px;
+		width: 36px;
+		background-color: #000;
+		top: 0px;
+		bottom: 0;
+		margin: auto;
+		box-shadow: 0px 8px 0px #000,
+		            0px -8px 0px #000;
+	}
+	nav{
+		width: 80%;
+		height: calc(100vh-50px);
+		background-color: #B0B0B0;
+		color: #FFF;
+		position: absolute;
+		top: 50px;
+		left: -100%;
+		transition: .5s;
+	}
+	nav a{
+		display: block;
+		text-decoration: none;
+		color: #FFF;
+		padding: 10px 20px;
+	}
+	#menu_control:checked ~.header nav{
+		left:0%;
+	}
+	
+	img{
+		vertical-align: bottom;
+	}
+	.footer {
+		background-color: #333;
+		color: #aaa;
+		text-align: center;
+		padding: 10px 0;
+	}
+	.item-group{
+		width: 100%;
+		max-width: 1400px;
+		margin: auto;
+	}
+	.banner img{
+		width: 100%;
+	}
+	.banner h1{
+		text-align: center;
+		font-size: 60px;
+		padding: 10px;
+	}
+	.banner span{
+		color:#1F6EC4;
+		padding-left: 10px;
+	}
+	.banner p{
+		text-align: center;
+		font-size: 24px;
+		padding: 10px;
+	}
+	.title{
+		margin: 0 0 20px;
+		padding: 30px 10px;
+		background-color: #aaa;
+	}
+	.title h2{
+		text-align: center;
+		font-size: 46px;
+	}
+	.title p{
+		text-align: center;
+		font-size: 22px;
+	}
+	.item{
+		margin: 0 10px 40px;
+	}
+	.item .text h3{
+		font-size: 24px;
+		text-align: center;
+		padding: 10px 0;
+	}
+	.item p{
+		margin: 10px 0;
+		text-align: center;
+	}
+	.item .pic img{
+		width: 100%;
+	}
+	
+	@media screen and (min-width:768px){
+		.item-group{
+			display: flex;
+		}
+		.service .item{
+			display: flex;
+		}
+		.service .item .pic,
+		.service .item .text{
+			display: flex;
+			padding: 0 20px;
+			box-sizing: border-box;
+			flex-direction: column;
+			justify-content: center;
+		}
+		.menu_btn{
+			display: none;
+		}
+		
+		.header{
+			display: flex;
+			align-content: center;
+		}
+		nav{
+			position: relative;
+			left: 0%;
+			display: flex;
+			width: auto;
+			height: auto;
+			top: 0;
+		}
+	}
+	
+</style>
+<!-- Syntax Highlighter -->
+  <link href="css/shCore.css" rel="stylesheet" type="text/css" />
+  <link href="css/shThemeDefault.css" rel="stylesheet" type="text/css" />
+  <!-- Demo CSS -->
+	<link rel="stylesheet" href="demo/css/demo.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="demo/css/flexslider.css" type="text/css" media="screen" />
+
+	<!-- Modernizr -->
+  <script src="js/modernizr.js"></script>
+
+</head>
+<body class="loading">
+	<div id="fixed-header-slide">
+    <div id="fixed-header-wrap">
+	<input type="checkbox" name="" id="menu_control">
+	<div class="header">
+		<h1 class="logo">
+		   <a href="#"><img src="logo.jpg" height="50px" width="75px"></a>
+		</h1>
+		<label for="menu_control" class="menu_btn">
+		    <span>選單</span>
+		</label>
+		<div class="navbar">
+		   <nav>
+		    <a href="#about">關於我</a>
+			<a href="#skill">關於技能</a>
+			<a href="#work">關於作品</a>
+		   </nav>
+		</div>
+      </div>
+	 </div>
+	</div>
+	
+	<div class="banner">
+		<img src="IMG_0307.jpg">
+	     <h1 class="mb-0">
+            陳伃萱
+            <span class="text-primary" >Nyx Chen</span>
+          </h1>
+          <p>
+            來自彰化大城
+            <a href="mailto:dakotaylor1213@gmail.com">dakotaylor1213@gmail.com</a>
+          </p>
+	</div>
+	
+	
+	<div class="about">
+	     <div class="wrap">
+			 <div class="title" id="about">
+				 <h2>關於我</h2>
+			 </div>
+			 <div class="item-group">
+				 <div class="item">
+					 <div class="pic">
+					    <img src="1434015857.jpg">
+					 </div>
+					 <div class="text">
+					    <h3>學歷</h3>
+					    <p>亞洲大學</p>
+						<p>行動商務與多媒體應用學系</p>
+					 </div>
+				 </div>
+				 <div class="item">
+					 <div class="pic">
+					    <img src="155434247_3770499203015914_8740301728521737382_n.jpg">
+					 </div>
+					 <div class="text">
+					    <h3>社團</h3>
+					    <p>亞洲大學攝影社</p>
+						<p>擔任社長一年</p>
+					 </div>
+				 </div>
+				 <div class="item">
+					 <div class="pic">
+					    <img src="107781811_3373740512676362_601142011600037711_n.jpg">
+					 </div>
+					 <div class="text">
+					    <h3>志工</h3>
+					    <p>伯利歐公益路跑攝影志工</p>
+						 <p>伯利歐藝術募款餐會攝影志工</p>
+					 </div>
+				 </div>
+			</div> 
+		 </div>
+	</div>
+	
+	
+	
+	
+	
+	
+	<div class="service">
+	   <div class="wrap">
+			    <div class="title" id="skill">
+				    <h2>關於技能</h2>
+			    </div>
+		        <div class="item-group">
+				 <div class="item">
+					 <div class="pic">
+					    <img src="web2.jpg">
+					 </div>
+					 <div class="text">
+					    <h3>網頁</h3>
+					    <p>HTML</p>
+						 <p>CSS</p>
+						 <p>JavaScript</p>
+						 <p>RWD</p>
+					 </div>
+				 </div>
+				 <div class="item">
+					 <div class="pic">
+					    <img src="code2.jpg">
+					 </div>
+					 <div class="text">
+					    <h3>程式</h3>
+					    <p>Java</p>
+						<p>Android Studio</p>
+						<p>Arduino</p>
+					 </div>
+				 </div>
+				 <div class="item">
+					 <div class="pic">
+					    <img src="photo2.jpg">
+					 </div>
+					 <div class="text">
+					    <h3>攝影</h3>
+					    <p>單眼攝影</p>
+						<p>手機攝影</p>
+						<p>底片攝影</p>
+						<p>動態錄影</p>
+					 </div>
+				 </div>
+				</div>
+		        <div class="item-group">
+				 <div class="item">
+					 <div class="pic">
+					    <img src="video2.jpg">
+					 </div>
+					 <div class="text">
+					    <h3>影音</h3>
+					    <p>Photoshop</p>
+						<p>iMovie</p>
+						<p>Premiere</p>
+					 </div>
+				 </div>
+				 <div class="item">
+					 <div class="pic">
+					    <img src="design2.jpg">
+					 </div>
+					 <div class="text">
+					    <h3>設計</h3>
+					    <p>似顏繪</p>
+						<p>貼圖設計</p>
+						<p>明信片設計</p>
+						<p>海報設計</p>
+				     </div>
+				 </div>
+				 <div class="item">
+					 <div class="pic">
+					    <img src="other2.jpg">
+					 </div>
+					 <div class="text">
+					    <h3>其他</h3>
+					    <p>Tableau</p>
+						<p>Google Analytics</p>
+						<p>社群經營</p>
+					 </div>
+				 </div>
+			</div>
+	
+	</div>
+		<div class="service">
+		<div class="wrap">
+			    <div class="title" id="work">
+				    <h2>關於作品</h2>
+			    </div>
+			<div id="main" role="main">
+      <section class="slider">
+        <div class="flexslider">
+          <ul class="slides">
+            <li data-thumb="1.png">
+  	    	    <img src="1.png"/>
+  	    		</li>
+  	    		<li data-thumb="2.png">
+  	    	    <img src="2.png"/>
+  	    		</li>
+  	    		<li data-thumb="3.png">
+  	    	    <img src="3.png"/>
+  	    		</li>
+  	    		<li data-thumb="4.png">
+  	    	    <img src="4.png"/>
+  	    		</li>
+  	    		<li data-thumb="5.png">
+  	    	    <img src="5.png"/>
+  	    		</li>
+  	    		<li data-thumb="6.png">
+  	    	    <img src="6.png"/>
+  	    		</li>
+  	    		<li data-thumb="7.png">
+  	    	    <img src="7.png"/>
+  	    		</li>
+			  <li data-thumb="8.png">
+  	    	    <img src="8.png"/>
+  	    		</li>
+  	    		<li data-thumb="9.png">
+  	    	    <img src="9.png"/>
+  	    		</li>
+  	    		<li data-thumb="10.png">
+  	    	    <img src="10.png"/>
+  	    		</li>
+  	    		<li data-thumb="11.png">
+  	    	    <img src="11.png"/>
+  	    		</li>
+			  <li data-thumb="12.png">
+  	    	    <img src="12.png"/>
+  	    		</li>
+          </ul>
+        </div>
+      </section>
+		    </div>
+	
+	
+	
+	
+	
+	<div class="footer">&copy; copyright 2021 by NyxChen</div>
+			
+	<!-- jQuery -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.min.js">\x3C/script>')</script>
+
+  <!-- FlexSlider -->
+  <script defer src="demo/js/jquery.flexslider.js"></script>
+
+  <script type="text/javascript">
+    $(function(){
+      SyntaxHighlighter.all();
+    });
+    $(window).load(function(){
+      $('.flexslider').flexslider({
+        animation: "slide",
+        controlNav: "thumbnails",
+        start: function(slider){
+          $('body').removeClass('loading');
+        }
+      });
+    });
+  </script>
+
+
+  <!-- Syntax Highlighter -->
+  <script type="text/javascript" src="demo/js/shCore.js"></script>
+  <script type="text/javascript" src="demo/js/shBrushXml.js"></script>
+  <script type="text/javascript" src="demo/js/shBrushJScript.js"></script>
+
+  <!-- Optional FlexSlider Additions -->
+  <script src="demo/js/jquery.easing.js"></script>
+  <script src="demo/js/jquery.mousewheel.js"></script>
+  <script defer src="demo/js/demo.js"></script>
+</body>
+</html>
